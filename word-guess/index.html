@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>My First Object</title>
-  </head>
-  <body>
-      <script src="assets/javascript/javascript.js">
-        </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+          <h3>Instructions:</h3>
+          <p>press the letter you want to guess. After a gameover, press any key to continue</p>
+        <img id="hangMan" src="" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <div class="instructions">
+          <h2>Your Word: </h2>
+          <div id="wordClue" class="HUD">
+          </div>
+          <div id="guesses" class="HUD">
+          </div>
+          <div id="gamesWon" class="HUD">
+          </div>
+          <div id="gamesLost" class="HUD">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/javascript/javascript.js">
+    </script>
+
+</body>
