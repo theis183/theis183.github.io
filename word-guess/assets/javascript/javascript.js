@@ -1,4 +1,8 @@
-var wordBank = ["test", "magic"];
+var wordBank = ["maniacal", "atrocious", "kingdom", "dentist", "electric", "garden", "kitchen", "popcorn", "chicken", "chardonnay",
+    "stout", "whiskey", "ladder", "toilet", "embark", "asteroid", "accelerate", "imbibe", "wormhole", "business", "platform", "chrome",
+    "membrane", "osmosis", "kinetic", "crystal", "summon", "zombie", "alliance", "village", "whisper", "unspoken", "training", "pirate",
+    "sparrow", "galleon", "island", "identification", "waterfall", "starboard", "exhausted", "mermaid", "captain", "abscond", "cannon", "barnicle",
+    "lightning", "incoming", "teleport", "scimitar", "sandstorm", "phantom", "dreadlocks", "bandanna", "remember", "chemical", "romance", "swashbuckler"];
 var hangManImages = ["assets/image/hangman0.png",
     "assets/image/hangman1.png",
     "assets/image/hangman2.png",
