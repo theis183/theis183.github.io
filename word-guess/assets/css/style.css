@@ -1,6 +1,39 @@
 #wordClue{
     font-size: 40px;
-    letter-spacing: 20px
+    letter-spacing: 20px;  
+}
 
+body{
+    background-image: url("https://garibaldicharters.com/wp-content/uploads/2016/07/water-background.jpg");
     
+}
+
+#hangMan{
+    border:4px solid black;
+}
+
+.HUD{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin: 20px;
+    padding: 5px;
+    -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black;
+}
+
+#instructions{
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black;
+}
+
+#heading{
+    font-size: 45px;
+    font-weight: bolder;
+    color: white;
+    -webkit-text-stroke-width: 3px;
+   -webkit-text-stroke-color: black;
 }

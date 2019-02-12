@@ -1,8 +1,12 @@
-var wordBank = ["maniacal", "atrocious", "kingdom", "dentist", "electric", "garden", "kitchen", "popcorn", "chicken", "chardonnay",
-    "stout", "whiskey", "ladder", "toilet", "embark", "asteroid", "accelerate", "imbibe", "wormhole", "business", "platform", "chrome",
-    "membrane", "osmosis", "kinetic", "crystal", "summon", "zombie", "alliance", "village", "whisper", "unspoken", "training", "pirate",
-    "sparrow", "galleon", "island", "identification", "waterfall", "starboard", "exhausted", "mermaid", "captain", "abscond", "cannon", "barnicle",
-    "lightning", "incoming", "teleport", "scimitar", "sandstorm", "phantom", "dreadlocks", "bandanna", "remember", "chemical", "romance", "swashbuckler"];
+var wordBank = ["maniacal", "atrocious", "kingdom", "chardonnay",
+    "stout", "whiskey", "ladder", "anchor", "squal", "embark", "iceburg", "accelerate", "imbibe", "merchant", "platform",
+    "kinetic", "crystal", "treasure", "zombie", "alliance", "village", "whisper", "unspoken", "training", "pirate",
+    "sparrow", "galleon", "island", "waterfall", "starboard", "exhausted", "mermaid", "captain", "abscond", "cannon", "barnicle",
+    "lightning", "incoming", "cutlass", "phantom", "dreadlocks", "bandanna", "gunpowder", "romance", "swashbuckler",
+    "scurvy", "nodical", "leeward", "windward", "mainsail", "aground", "midship", "armament", "ashore", "asylum", "backstays",
+    "catamaran", "deadrise", "embayed", "fathom", "gunwhale", "harbor", "idlers", "jacklines", "killick", "league", "mainmast",
+    "navigation", "overwhelmed", "privateer", "quarterdeck", "rigging", "scuttlebutt", "topmast", "underwater", "vanishing",
+    "weatherhelm", "yardarm"];
 var hangManImages = ["assets/image/hangman0.png",
     "assets/image/hangman1.png",
     "assets/image/hangman2.png",
@@ -44,8 +48,9 @@ var game = {
 
 
     resetDisplayWord: function () {
+        this.displayWord = []
         for (i = 0; i < this.word.length; i++) {
-            this.displayWord[i] = '_'
+            this.displayWord.push('_');
         }
     },
 
@@ -69,8 +74,12 @@ var game = {
         document.getElementById("gamesLost").innerText = "Games Lost: " + this.lost
     },
 
-    showGuesses: function (){
+    showGuesses: function () {
         document.getElementById("guesses").innerText = "Guessed: " + this.guessed
+    },
+
+    showWord: function () {
+        document.getElementById("theWord").innerText = "The Word was: " + this.word
     }
 
 
@@ -92,7 +101,11 @@ document.onkeyup = function (event) {
         var key = event.key.toLowerCase();
         console.log(game.word);
         console.log(key);
-        if (game.word.includes(key)) {
+        if (game.guessed.includes(key)) {
+            console.log('duplicate guess');
+        }
+
+        else if (game.word.includes(key)) {
             game.guessed.push(key);
             game.guessedRight.push(key);
             console.log(game.guessed);
@@ -102,9 +115,7 @@ document.onkeyup = function (event) {
             game.showGuesses();
             console.log(game.displayWord);
         }
-        else if (game.guessed.includes(key)) {
-            console.log('duplicate guess');
-        }
+
 
         else {
             game.guessed.push(key);
@@ -122,11 +133,12 @@ document.onkeyup = function (event) {
             game.gameOver = true;
             game.lost++;
             game.showGamesLost();
+            game.showWord();
             console.log("gameover " + game.gameOver)
             console.log("games lost " + game.lost)
         }
 
-        else if (!(game.displayWord.includes("_"))){
+        else if (!(game.displayWord.includes("_"))) {
             game.gameOver = true;
             game.won++;
             game.showGamesWon();
