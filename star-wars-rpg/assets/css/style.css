@@ -1,0 +1,9 @@
+.starWarsCrawl{
+    -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: yellow;
+   font-size: 80px;
+}
+
+body{
+    background-image: url("../images/starsBackground.jpg")
+}
