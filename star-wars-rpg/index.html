@@ -15,6 +15,11 @@
         <!-- AND/OR YOUR OWN CSS -->
         <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
         <link rel="stylesheet" href="assets/css/style.css">
+        <audio src="assets/audio/swvader03.mp3" id="vaderSound"></audio>
+        <audio src="assets/audio/yodalaughing.mp3" id="yodaSound"></audio>
+        <audio src="assets/audio/Revenge.mp3" id="maulSound"></audio>
+        <audio src="assets/audio/wontfail.mp3" id= "lukeSound"></audio>
+        <audio src= "assets/audio/light-saber-on.mp3" id="battleSound"></audio>
 
 
 </head>
@@ -22,39 +27,66 @@
 <body>
         <div class="container">
                 <div class="row">
+                        <div class="col-md-9">
+                                <h1 class="starWarsCrawl" id="mainHeading">STAR WARS RPG</h1>    
+                        </div>
+                        <div class="col-md-3">
+                                <button type="button" class="btn btn-warning" id="newGame">New Game</button>
+                        </div>
+                </div>
+                <div class="row">
                         <div class="col-md-12">
-                                <h1 class="starWarsCrawl">STAR WARS RPG</h1>
+                                <h1 class="starWarsCrawl" id="instructions">Instructions <br></h1>
+                                <p id="gameStateInstruction"></p>
                         </div>
-                        <div class="row">
-                                <div class="col-md-3" id="select0">
-                                </div>
-                                <div class="col-md-3" id="select1">
-                                </div>
-                                <div class="col-md-3" id="select2">
-                                </div>
-                                <div class="col-md-3" id="select3">
+                </div>
+                <div class="row">
+                        <div class="col-md-3" id="select0">
+                        </div>
+                        <div class="col-md-3" id="select1">
+                        </div>
+                        <div class="col-md-3" id="select2">
+                        </div>
+                        <div class="col-md-3" id="select3">
 
-                                </div>
                         </div>
-                        <div class="row">
-                                <div class="col-md-3" id="enemy0">
-                                </div>
-                                <div class="col-md-3" id="enemy1">
-                                </div>
-                                <div class="col-md-3" id="enemy2">
-                                </div>
-                                <div class="col-md-3">
-                                </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-12">
+                                <h1 class="starWarsCrawl" id="battleGroundHeader">Battle Grounds</h1>
+                                <p id="gameStateInstruction"></p>
                         </div>
-                        <div class="row">
-                                <div class="col-md-12">
-                                        <button type="button" class="btn btn-danger" id="attack">Attack</button>
-                                </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-3" id="battleGround">
+                        </div>
+                        <div class="col-md-3">
+                                <button type="button" class="btn btn-danger" id="attack">Attack</button>
+                        </div>
+                        <div class="col-md-6" id="battleLog">
+                        </div>
+
+                </div>
+                <div class="row">
+                        <div class="col-md-12">
+                                <h1 class="starWarsCrawl" id="enemySelectHeader">Enemy Staging Grounds</h1>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-3" id="enemy0">
+                        </div>
+                        <div class="col-md-3" id="enemy1">
+                        </div>
+                        <div class="col-md-3" id="enemy2">
+                        </div>
+                        <div class="col-md-3">
                         </div>
                 </div>
 
-                <!-- Link to your JavaScript -->
-                <script type="text/javascript" src="assets/javascript/starWarsRPG.js"></script>
+        </div>
+
+        <!-- Link to your JavaScript -->
+        <script type="text/javascript" src="assets/javascript/starWarsRPG.js"></script>
 
 </body>
 

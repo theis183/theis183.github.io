@@ -1,7 +1,38 @@
 .starWarsCrawl{
     -webkit-text-stroke-width: 2px;
    -webkit-text-stroke-color: yellow;
-   font-size: 80px;
+}
+
+#mainHeading{
+    font-size: 50px;
+}
+
+#instructions{
+    font-size: 35px
+}
+
+#battleGroundHeader{
+    font-size: 35px
+}
+
+#enemySelectHeader{
+    font-size: 35px;
+}
+
+#gameStateInstruction{
+    font-size: 20px;
+    color: yellow;
+}
+#battleLog{
+    font-size: 14px;
+    color: yellow;
+}
+
+#newGame{
+    background-color: yellow;
+    color: black;
+    align-items: center;
+    padding: 20px, 0, 0 , 0;
 }
 
 body{
