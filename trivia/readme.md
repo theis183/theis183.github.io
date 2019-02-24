@@ -1,0 +1,1 @@
+This project uses javascript and jquery to ask the users trivia questions. It will be timed and the user will get a summary screen at the end.
