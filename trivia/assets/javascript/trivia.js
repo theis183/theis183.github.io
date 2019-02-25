@@ -10,8 +10,44 @@ var question2 = {
     correctAnswer: 3,
 }
 
+var question3 = {
+    question: "Traveling at the speed of light, how long would it take to travel to Alpha Centauri?",
+    possibleAnswers: ["About 120 days", "About 1 Year", "About 4 years", "About 100 years"],
+    correctAnswer: 2,
+}
+
+var question4 = {
+    question: "Which planet in our solar system has the hottest surface tempurature?",
+    possibleAnswers: ["Mercury", "Venus", "Mars", "Saturn"],
+    correctAnswer: 1,
+}
+
+var question5 = {
+    question: "What is at the center of the Milky Way?",
+    possibleAnswers: ["A Wormhole", "A Black Hole", "A Star", "A Pulsar"],
+    correctAnswer: 1,
+}
+
+var question6 = {
+    question: "How many stars are in the Milky Way?",
+    possibleAnswers: ["1", "Thousands", "Millions", "Billions"],
+    correctAnswer: 3,
+}
+
+var question7 = {
+    question: "The sun accounts for how much of our solar systems mass?",
+    possibleAnswers: ["10%", "40%", "80%", "99.8%"],
+    correctAnswer: 3,
+}
+
+var question8 = {
+    question: "What is the most common type of matter?",
+    possibleAnswers: ["Dark Matter", "Dark Energy", "Observable Matter", "Hydrogen"],
+    correctAnswer: 0,
+}
+
 var game = {
-    questions: [question1, question2],
+    questions: [question1, question2, question3, question4, question5, question6, question7, question8],
     numberCorrect: 0,
     numberWrong: 0,
     currentQuestion: 0,
@@ -32,7 +68,7 @@ var game = {
     },
     displayCorrectAnswerBanner(){
         $.ajax({
-            url:"https://api.giphy.com/v1/gifs/search?apikey=4Bh49w1RjN3aa88cRyxeNpd7ppM0htYQ&q=correct+answer&limit=1",
+            url:"https://api.giphy.com/v1/gifs/search?apikey=4Bh49w1RjN3aa88cRyxeNpd7ppM0htYQ&q=thats+correct&limit=1",
             method: "GET"
         }).then(function (response){
             $("#question").html("")
@@ -53,8 +89,25 @@ var game = {
         })
         
     },
+    displayStats(){
+        $("#question").html("")
+        $("#answers").html("")
+        $("#display").html('<h1>Congratulations!</h1><br>\
+                <h2>You got ' + this.numberCorrect + ' out of ' + this.questions.length + ' questions right! </h2><br>')
+                $.ajax({
+                    url:"https://api.giphy.com/v1/gifs/search?apikey=4Bh49w1RjN3aa88cRyxeNpd7ppM0htYQ&q=good+job&limit=1",
+                    method: "GET"
+                }).then(function (response){
+                    $("#display").append('<img src="' + response.data[0].images.original.url +'" >')
+                })
+
+
+    },
+    timeUntilDisplayStats(){
+        setTimeout(function(){game.displayStats()}, 2000)
+    },
     timeUnitNextQuestion(){
-        setTimeout(function (){game.displayQuestion()}, 3000)
+        setTimeout(function (){game.displayQuestion()}, 2000)
 
     },
     checkAnswer(submitted){
@@ -71,6 +124,7 @@ var game = {
         if(this.currentQuestion < this.questions.length){
             this.timeUnitNextQuestion()
         }
+        else{this.timeUntilDisplayStats()}
 
     },
     submitAnswer: function () {    
@@ -85,7 +139,6 @@ var game = {
                 }
             }
             if (found) { this.checkAnswer(answerToSubmit)}
-            else {this.displayErrorNoAnswer()}
 
 
     }

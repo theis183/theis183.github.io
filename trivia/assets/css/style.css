@@ -1,0 +1,11 @@
+body {
+    background-image: url("../images/realistic-galaxy-milky-way.png") 
+}
+
+#question{
+    color: greenyellow
+}
+
+#answers{
+    color: greenyellow;
+}
