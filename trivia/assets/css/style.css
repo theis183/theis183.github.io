@@ -1,11 +1,23 @@
 body {
-    background-image: url("../images/realistic-galaxy-milky-way.png") 
+    background-image: url("../images/realistic-galaxy-milky-way.png");
+    color: greenyellow 
+}
+
+#newGame {
+background-color: greenyellow;
+color: black
+}
+
+#timer{
+    font-size: 30px;
+    float: right;
 }
 
 #question{
-    color: greenyellow
+font-size: 24px
 }
 
 #answers{
-    color: greenyellow;
+    font-size: 20px
 }
+
