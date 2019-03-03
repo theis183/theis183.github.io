@@ -1,4 +1,4 @@
-var topics = ["UFC", "NBA", "NFL", "PGA", "NHL", "MLB"]
+var topics = ["UFC", "NBA", "NFL", "PGA", "NHL", "MLB", "FIFA"]
 
 function createButtons() {
     for(var i=0; i < topics.length; i++){
@@ -26,9 +26,9 @@ $(document).on("click" , ".create-gif-btn", function(){
             var gif = $("<img>")
             var p = $("<p>")
             p.text("Rating: " + res.data[i].rating)
-            gif.attr("src", res.data[i].images.fixed_height_small_still.url).attr("state", "still").attr("still-image", res.data[i].images.fixed_height_small_still.url)
-            gif.attr("animated-image", res.data[i].images.fixed_height_small.url).attr("class", "gif")
-            div.append(p).append(gif)
+            gif.attr("src", res.data[i].images.fixed_height_still.url).attr("state", "still").attr("still-image", res.data[i].images.fixed_height_still.url)
+            gif.attr("animated-image", res.data[i].images.fixed_height.url).attr("class", "gif")
+            div.append(p).append(gif).attr("class", "gif-container")
             $("#gif-results").prepend(div)
         }
 
