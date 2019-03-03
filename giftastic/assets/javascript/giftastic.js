@@ -20,12 +20,29 @@ $(document).on("click" , ".create-gif-btn", function(){
         url:"https://api.giphy.com/v1/gifs/search?apikey=4Bh49w1RjN3aa88cRyxeNpd7ppM0htYQ&q=" + gifTopic + "&limit=10",
         method: "GET"
     }).then(function(res) {
+        console.log(res)
         for(var i=0; i < 10; i++){
+            var div = $("<div>")
             var gif = $("<img>")
-            gif.attr("src", res.data[i].images.original.url)
-            $("#gif-results").prepend(gif)
+            var p = $("<p>")
+            p.text("Rating: " + res.data[i].rating)
+            gif.attr("src", res.data[i].images.fixed_height_small_still.url).attr("state", "still").attr("still-image", res.data[i].images.fixed_height_small_still.url)
+            gif.attr("animated-image", res.data[i].images.fixed_height_small.url).attr("class", "gif")
+            div.append(p).append(gif)
+            $("#gif-results").prepend(div)
         }
 
     })
 
 } )
+
+$(document).on("click", ".gif", function(){
+    var myGif = $(this)
+    var state = myGif.attr("state")
+    if (state == "still") {
+        myGif.attr("src" ,myGif.attr("animated-image")).attr("state", "animated")
+    }
+    else{
+        myGif.attr("src" ,myGif.attr("still-image")).attr("state", "still")
+    }
+})
