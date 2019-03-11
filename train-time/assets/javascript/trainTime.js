@@ -29,9 +29,19 @@ var config = {
         var $row = $("<tr>")
         var $name = $("<td>").text(childSnapshot.val().name)
         var $desination = $("<td>").text(childSnapshot.val().destination)
-        var $frequency =  $("<td>").text(childSnapshot.val().frequency)
+        var frequency = childSnapshot.val().frequency
+        var $frequency =  $("<td>").text(frequency)
+        var time = moment("03-01-2019 " + childSnapshot.val().first, "MM-DD-YYYY HH:mm").unix()
+        var now = moment().unix()
+        var minutesUntil = (parseInt(now) - parseInt(time)) / 60
+        var trainsPassed = Math.ceil(minutesUntil / parseInt(childSnapshot.val().frequency))
+        var nextTrain = moment(parseInt(time) + (trainsPassed * frequency * 60), "X")
+        var $nextTrain =$("<td>").text(nextTrain.format("dddd, MMMM Do YYYY, h:mm"))
+        var minutesUntilNextTrain = Math.floor((nextTrain.unix() - now ) / 60 )
+        var $minutesUntilNextTrain = $("<td>").text(minutesUntilNextTrain)
 
-        $row.append($name).append($desination).append($frequency)
+
+        $row.append($name).append($desination).append($frequency).append($nextTrain).append($minutesUntilNextTrain)
         $("#train-schedule-info").append($row)
     
     })
